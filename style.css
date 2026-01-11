@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap');
+
+body {
+    font-family: 'Cairo', sans-serif;
+}
+
+/* Scrollbar Styling */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: rgba(30, 41, 59, 0.5);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(71, 85, 105, 0.8);
+    border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(99, 102, 241, 0.8);
+}
+
+/* Animations */
+@keyframes flash-green {
+    0% { background-color: rgba(34, 197, 94, 0.2); }
+    100% { background-color: transparent; }
+}
+@keyframes flash-red {
+    0% { background-color: rgba(239, 68, 68, 0.2); }
+    100% { background-color: transparent; }
+}
+
+.flash-up {
+    animation: flash-green 0.5s ease-out;
+}
+.flash-down {
+    animation: flash-red 0.5s ease-out;
+}
+
+/* Chart Line Animation */
+.chart-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 2s linear forwards;
+}
+
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.pair-item.active-pair {
+    background: rgba(51, 65, 85, 0.8);
+    border-right: 3px solid #6366f1;
+}
+
+/* Landing Page Transition */
+.fade-out {
+    opacity: 0;
+    pointer-events: none;
+}
+.fade-in {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+/* Order Book Row Hover */
+.order-row:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+}
